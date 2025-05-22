@@ -27,7 +27,7 @@ def reset_form():
     load_data(payankhedmat_list)
 
 def save_btn_click():
-    payankhedmat = (id.get(), serial_number.get(), start_date.get(), end_date.get(), city.get(), organ.get())
+    payankhedmat = (id.get(), serial_number.get(), start_date.get(), end_date.get(), city.get(), organ.get(), full_name.get())
     errors = payankhedmat_validator(payankhedmat)
     if errors:
         msg.showerror("Errors", "\n".join(errors))
