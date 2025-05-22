@@ -23,7 +23,7 @@ def reset_form():
     end_date.set("")
     city.set("")
     organ.set("")
-    full_name("")
+    full_name.set("")
     load_data(payankhedmat_list)
 
 def save_btn_click():
@@ -33,7 +33,7 @@ def save_btn_click():
         msg.showerror("Errors", "\n".join(errors))
     else:
         msg.showinfo("Saved", "Person saved")
-        payankhedmat.append(payankhedmat)
+        payankhedmat_list.append(payankhedmat)
         write_to_file("payankhedmat.dat", payankhedmat_list)
         reset_form()
 
