@@ -21,4 +21,7 @@ def payankhedmat_validator(payankhedmat):
     if not (type(payankhedmat[5]) == str and re.match(r"^[a-zA-Z\s]{3,30}$", payankhedmat[5])):
         errors.append('Person Organ is invalid')
 
+    if not (type(payankhedmat[6]) == str and re.match(r"^[a-zA-Z\s]{3,30}$", payankhedmat[6])):
+        errors.append('Person Full Name is invalid')
+
     return errors

@@ -23,6 +23,7 @@ def reset_form():
     end_date.set("")
     city.set("")
     organ.set("")
+    full_name("")
     load_data(payankhedmat_list)
 
 def save_btn_click():
@@ -46,6 +47,7 @@ def table_select(x):
         end_date.set(selected_person[3])
         city.set(selected_person[4])
         organ.set(selected_person[5])
+        full_name(selected_person[6])
 
 
 def edit_btn_click():
@@ -90,14 +92,20 @@ Label(window, text="organ").place(x=20, y=140)
 organ = IntVar()
 Entry(window, textvariable=organ).place(x=80, y=140)
 
+# full_name
+Label(window, text="id").place(x=20, y=20)
+full_name = IntVar(value=1)
+Entry(window, textvariable=full_name).place(x=80, y=20)
 
-table = ttk.Treeview(window, columns=[1, 2, 3, 4, 5, 6], show="headings")
+
+table = ttk.Treeview(window, columns=[1, 2, 3, 4, 5, 6, 7], show="headings")
 table.heading(1, text="Id")
 table.heading(2, text="Serial Number")
 table.heading(3, text="Start Date")
 table.heading(4, text="End Date")
 table.heading(5, text="City")
 table.heading(6, text="Organ")
+table.heading(7, text="Full Name")
 
 table.column(1, width=100)
 table.column(2, width=100)
@@ -105,6 +113,7 @@ table.column(3, width=100)
 table.column(4, width=100)
 table.column(5, width=100)
 table.column(6, width=100)
+table.column(7, width=100)
 
 table.bind("<<TreeviewSelect>>", table_select)
 
