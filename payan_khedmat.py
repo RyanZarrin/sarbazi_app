@@ -63,39 +63,39 @@ window.title("Person Info")
 window.geometry("610x270")
 
 # Id
-Label(window, text="id").place(x=20, y=20)
+Label(window, text="ID").place(x=20, y=20)
 id = IntVar(value=1)
 Entry(window, textvariable=id, state="readonly").place(x=80, y=20)
 
 # Serial number
-Label(window, text="serial_number").place(x=20, y=60)
+Label(window, text="Serial Number").place(x=20, y=60)
 serial_number = StringVar()
 Entry(window, textvariable=serial_number).place(x=80, y=60)
 
 # Start Date
-Label(window, text="start_date").place(x=20, y=100)
+Label(window, text="Start Date").place(x=20, y=100)
 start_date = StringVar()
 Entry(window, textvariable=start_date).place(x=80, y=100)
 
 # End Date
-Label(window, text="end_date").place(x=20, y=140)
+Label(window, text="End Date").place(x=20, y=140)
 end_date = IntVar()
 Entry(window, textvariable=end_date).place(x=80, y=140)
 
 # City
-Label(window, text="city").place(x=20, y=140)
+Label(window, text="City").place(x=20, y=180)
 city = IntVar()
-Entry(window, textvariable=city).place(x=80, y=140)
+Entry(window, textvariable=city).place(x=80, y=180)
 
 # Organ
-Label(window, text="organ").place(x=20, y=140)
+Label(window, text="Organ").place(x=20, y=220)
 organ = IntVar()
-Entry(window, textvariable=organ).place(x=80, y=140)
+Entry(window, textvariable=organ).place(x=80, y=220)
 
 # full_name
-Label(window, text="id").place(x=20, y=20)
+Label(window, text="Full Name").place(x=20, y=260)
 full_name = IntVar(value=1)
-Entry(window, textvariable=full_name).place(x=80, y=20)
+Entry(window, textvariable=full_name).place(x=80, y=260)
 
 
 table = ttk.Treeview(window, columns=[1, 2, 3, 4, 5, 6, 7], show="headings")
@@ -119,10 +119,10 @@ table.bind("<<TreeviewSelect>>", table_select)
 
 table.place(x=230, y=20)
 
-Button(window, text="Save", width=6, command=save_btn_click).place(x=20, y=220)
-Button(window, text="Edit", width=6, command=edit_btn_click).place(x=90, y=220)
-Button(window, text="Remove", width=6, command=remove_btn_click).place(x=160, y=220)
-Button(window, text="Clear", width=6, command=reset_form).place(x=20, y=180, width=190)
+Button(window, text="Save", width=6, command=save_btn_click).place(x=170, y=350)
+Button(window, text="Edit", width=6, command=edit_btn_click).place(x=110, y=350)
+Button(window, text="Remove", width=6, command=remove_btn_click).place(x=50, y=350)
+Button(window, text="Clear", width=6, command=reset_form).place(x=80, y=300, width=110)
 
 reset_form()
 
