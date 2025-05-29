@@ -3,6 +3,8 @@ import tkinter.ttk as ttk
 import tkinter.messagebox as msg
 from file_manager import *
 from validator import *
+from sarbazi import Sarbazi
+
 
 payankhedmat_list = read_from_file("payankhedmat.dat")
 
@@ -39,15 +41,15 @@ def save_btn_click():
 
 
 def table_select(x):
-    selected_person = table.item(table.focus())["values"]
+    selected_person = Sarbazi(*table.item(table.focus())["values"])
     if selected_person:
-        id.set(selected_person[0])
-        serial_number.set(selected_person[1])
-        start_date.set(selected_person[2])
-        end_date.set(selected_person[3])
-        city.set(selected_person[4])
-        organ.set(selected_person[5])
-        full_name(selected_person[6])
+        id.set(selected_person.id)
+        serial_number.set(selected_person.serial_number)
+        start_date.set(selected_person.start_date)
+        end_date.set(selected_person.end_date)
+        city.set(selected_person.city)
+        organ.set(selected_person.organ)
+        full_name.set(selected_person.full_name)
 
 
 def edit_btn_click():
@@ -55,7 +57,9 @@ def edit_btn_click():
 
 
 def remove_btn_click():
-    pass
+    selected_person = (table.focus()[ "values" ])
+    if selected_person:
+        table.delete(selected_person)
 
 
 window = Tk()

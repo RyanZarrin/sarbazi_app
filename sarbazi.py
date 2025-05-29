@@ -1,3 +1,5 @@
+from validator import payankhedmat_validator
+
 class Sarbazi:
     def __init__(self, id, serial_number, start_date, end_date, city, organ, full_name):
         self.id = id
@@ -15,10 +17,8 @@ class Sarbazi:
     def find_by_serial_number(self):
         print(f"{self.serial_number} Found ")
 
+    def to_tuple(self):
+        return(self.id, self.serial_number, self.start_date, self.end_date, self.city, self.organ, self.full_name)
 
-srb1 = Sarbazi(2331, "123456", "2010-02-03", "2012-02-03", "Tehran", "Officer", "Ali Sardari")
-srb2 = Sarbazi("2341", "123543", "2010-03-04","2013-05-01","Tabriz", "Soldier", "Parsa Kalantari")
-
-
-srb1.save()
-srb2.save()
+    def validatior(self):
+        return payankhedmat_validator(self)
